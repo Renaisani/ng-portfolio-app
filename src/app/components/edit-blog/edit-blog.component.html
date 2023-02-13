@@ -1,0 +1,14 @@
+<div *ngIf="blog" >
+    <div>
+        Your Name:
+        <input [(ngModel)]="blog.name" placeholder="Name">
+    </div>
+    <div>
+        Your Feedback:
+        <input [(ngModel)]="blog.content" placeholder="Feedback">
+    </div>
+    <button (click)="addFeedback(blog)" *ngIf="!blog.id">Add</button>
+    <button (click)="editFeedback(blog)" *ngIf="blog.id">Update</button>
+    <button (click)="deleteFeedback(blog)" *ngIf="blog.id">Delete</button>
+    <button (click)="cancelEdit()">Cancel</button>
+</div>
